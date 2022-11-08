@@ -1,3 +1,6 @@
+import '../week4/model/user_2_model.dart';
+import 'model/product_config_model.dart';
+
 void main(List<String> args) {
     final newProduct = Product.money;
 
@@ -8,7 +11,12 @@ void main(List<String> args) {
     // user classını kullanarak product oluştur
 
     final user1 = User('Veli', 'a');
-    final newProduct2 = Product(name: user1.product');
+    final User2 = User('AHmet', 'VB');
+    final newProduct2 = Product(user1.product);
+    final newProduct3 = Product.fromUser(User2);
+
+
+    ProductConfig.instance.apiKey;
 
 
 }
@@ -28,9 +36,14 @@ class Product {
 
   static int? money = 10;
   String name;
-  Product({
-    required this.name,
-  });
+
+
+  Product(this.name);
+  Product.Veli([this.name = 'Veli']);
+
+  factory Product.fromUser(User user){
+    return Product(user.name);
+  }
 
   static const companyName = ' vbBank';
 
@@ -46,8 +59,9 @@ class Product {
 
 class User {
   final String name;
-  final String product;
+  final String product; 
 
   User(this.name, this.product);
 
 }
+
