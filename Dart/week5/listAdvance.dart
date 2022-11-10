@@ -141,7 +141,3 @@ class CarModel {
 }
 
 enum CarModels { bmw, yamaha, toyota, mercedes }
-
-
-
-// 5.50
